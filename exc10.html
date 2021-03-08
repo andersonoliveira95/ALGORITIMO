@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Auilio filhos</h2>
+
+    qnt. de filhos com menos de 10 *ngFor="let item of stream | async as list"
+    <input type="text" id='abaixod' placeholder="menores de 10 anos">
+
+    <br>
+    qnt. de filhos apartir de 10 anos
+    <input type="text" id='apartird' placeholder="apartir de 10 anos">
+    
+    <br><br>
+
+<button onclick="funcfilho()" style="background-color: aquamarine;"> calcular auxilio</button>
+
+    <br><br>
+    <div id='auxt'></div>
+
+</body>
+
+</html>
+
+<script>
+    function funcfilho() {
+
+        
+        var mnr = abaixod.value * 30
+        var apr = apartird.value * 20
+        var totaux = mnr + apr
+
+        auxt.innerHTML = ` Você tem ${abaixod.value} filhos menores de 10 anos e ${apartird.value} filhos a partir de 10 anos, logo, seu "Auxílio Filhos" será de <u> R$ ${totaux} </u>`
+    }
+</script>

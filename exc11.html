@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exc11</title>
+</head>
+<body>
+    <H2 style="background-color: yellow;">Transformações de sayadin</H2>
+    
+Ki base = 
+<input type="text" id='ki1'>
+<br>
+<b>Transformar em ...</b><br>
+<button onclick='ssj()' style="background-color: aquamarine;"> SSJ</button>
+<button onclick='ssj2()' style="background-color:rgb(233, 233, 37);">SSJ2</button>
+<button onclick='ssj3()'style="background-color:red;">SSJ3</button>
+<br><br>
+<div id='div_ki'></div>
+
+
+
+</body>
+</html>
+<script>
+function ssj() {var s1 = ki1.value * 50;  div_ki.innerHTML = `Após se transformar em ssj, o ki desse Sayajin passa a ser de ${s1}`}
+function ssj2() {var s2 = ki1.value * 100; div_ki.innerHTML = `Após se transformar em ssj2, o ki desse Sayajin passa a ser de ${s2}`}
+function ssj3() {var s3 = ki1.value * 200; div_ki.innerHTML = `Após se transformar em ssj3, o ki desse Sayajin passa a ser de ${s3}`}
+
+</script>

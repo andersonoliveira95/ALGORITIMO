@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Calculando a média</h3>
+    nota1
+    <input type="text" id="n1">
+    <br>
+    nota2
+    <input type="text" id="n2"><br><br>
+    <button onclick="media()" style="background-color: red;">calcular média</button>
+    <div id="div_med"></div>
+</body>
+
+</html>
+<script>
+    function media() {
+        var soma = (Number(n1.value) + Number(n2.value)) / 2;
+
+        div_med.innerHTML = `a média é ${soma}`
+
+
+
+    }
+
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Olerite</h2>
+
+salario total:
+<input type="text" id='salariotl' placeholder="Salario">
+<br><br>
+<button onclick="calcularsl()" style="background-color: royalblue;">Calcular Descontos</button>
+<br><br>
+<div id='div_salfinal'></div>
+
+</body>
+</html>
+
+<script>
+function calcularsl(){
+
+var inss = salariotl.value * 0.1 
+var irvar = salariotl.value * 0.2
+var totaldsc = inss + irvar 
+var salcmdesc = salariotl.value - totaldsc
+
+div_salfinal.innerHTML = 
+`Seus descontos serão de: <br>
+    INSS: R$ ${inss} <br>
+    IR: R$ ${irvar} <br>
+    Total de descontos: R$ ${totaldsc}
+    Seu salário, após os descontos será de: R$ ${salcmdesc} `
+
+}
+
+
+</script>

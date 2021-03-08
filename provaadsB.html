@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleiçoes</title>
+</head>
+
+<link rel="stylesheet" href="provab.css">
+
+<body>
+    <div>
+        <img style="height: 200px;"
+            src="https://veja.abril.com.br/wp-content/uploads/2021/03/JAIR-BOLSONARO-AC%CC%A7AO-DE-GRAC%CC%A7AS-16122000783.jpg.jpg"
+            alt="">
+        <b><br>
+            Nome do candidato:
+            <input class="input" id="nome1" type="text">
+            Nome de seu partido:
+            <input class="input" id="partido" type="text">
+            Valor que ele gastou na campanha:
+            <input class="input" id="cust1" type="text">
+            Número de votos totais:
+            <input class="input" id="votoss1" type="text"><br>
+
+    </div>
+    </div>
+
+    <div>
+
+
+        <img style="height: 200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnPcVMXJWeOxhjiyFDANV-_AeKsfxKSqhj7Q&usqp=CAU"
+            alt="">
+        <b><br>
+            Nome do candidato:
+            <input class="input" id="nome2"type="text">
+            Nome de seu partido:
+            <input class="input" id="partido2"type="text">
+            Valor que ele gastou na campanha:
+            <input class="input" id="custo2" type="text">
+            Número de votos totais:
+            <input class="input" id="votost2" type="text"><br><br>
+
+        </b>
+
+    </div>
+
+    Votos em branco: <input class="input" id="brancos" type="text">
+
+    Votos nulos: <input class="input" id="anulados" type="text"><br><br>
+
+    <button class="botao" onclick="calcular()"><b>Analisar eleição</b></button>
+
+    <br><br>
+
+    <div id ="total_votos"></div>
+    <div id="imagens"></div>
+
+
+</body>
+
+<script>
+function calcular() {
+   
+    var votos1 = Number(votoss1.value); 
+    var votos2 = Number(votost2.value);
+    var custo_campanha = cust1.value;
+    var custo_campanha2 = custo2.value;
+    var vt_brancos = Number(brancos.value);
+    var vt_nulos = Number(anulados.value);
+    var pct_cddt1 = ( votos1 / (votos1 + votos2 + vt_nulos + vt_brancos)) * 100 ;
+    var pct_cddt2 = (votos2 / (votos1 + votos2 + vt_brancos + vt_nulos)) * 100 ;
+    var pct_brancos = (vt_brancos / (votos1 + votos2 + vt_brancos + vt_nulos)) * 100 ;
+    var pct_nulos = (vt_nulos / (votos1 + votos2 + vt_brancos + vt_nulos)) * 100 ;
+    var cst_eleitor = custo_campanha / votos1 ;
+    var cst_eleitor2 = custo_campanha2 / votos2 ;
+    var sem_voto = pct_brancos + pct_nulos;
+    var img_green = pct_cddt1 * 100 ;
+    var img_purple = pct_cddt2 * 100 ;
+    var img_black = sem_voto * 100 ;
+
+
+   
+
+   total_votos.innerHTML = `<b style="color:red;">Resultado da votação</b>
+   <br>
+ ${nome1.value} (partido ${partido.value} ) teve <b style="color:green;">${votos1}</b> votos (<b style="color:green;">${pct_cddt1}</b> % do total). 
+ <br><br>
+ ${nome2.value} (partido ${partido2.value} ) teve <b style="color:purple;">${votos2}</b> votos ( <b style="color:purple;">${pct_cddt2}</b> % do total). <br><br>
+
+Votos em branco - ${vt_brancos} votos ( ${pct_brancos}% do total).
+
+Votos nulos - ${vt_nulos} votos ( ${pct_nulos}% do total).
+<br><br><br>
+
+<b style="color:red;">Custos por eleitor</b>
+
+<br><br>
+
+${nome1.value} gastou R$<b style="color:green;"> ${custo_campanha}</b> na campanha.
+Como teve <b style="color:green;">${votos1}</b> votos, cada voto lhe custou R$<b style="color:green;">${cst_eleitor}</b> .
+<br><br>
+${nome2.value} gastou R$ <b style="color:purple;">${custo_campanha2}</b> na campanha.
+Como teve <b style="color:purple;">${votos2}</b> votos, cada voto lhe custou R$<b style="color:purple;">${cst_eleitor2}</b> .
+
+`
+var img_green = pct_cddt1 * 10 ;
+var img_purple = pct_cddt2 * 10 ;
+var img_black = sem_voto * 10 ;
+
+
+
+
+imagens.innerHTML = `
+    <img style="float: left;width:${img_green}px ;height:40px;" src=" https://greenpng.com/wp-content/uploads/2020/06/Fundo-verde-png-verde-floresta-300x300.png" alt="">
+    <img style="float: left;width:${img_purple}px ;height:40px;" src="https://img.freepik.com/vetores-gratis/projeto-do-fundo-multicolor_1117-99.jpg?size=300&ext=jpg" alt="">
+    <img style="float: left;width:${img_black}px;height:40px;" src=" https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Black_300.svg/300px-Black_300.svg.png" alt=""> `
+
+
+
+}
+
+
+
+
+
+</script>
+
+</html>

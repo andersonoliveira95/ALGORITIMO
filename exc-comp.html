@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orçamento</title>
+</head>
+
+<body>
+
+    <h2>Orçamento para o Nicanor</h2>
+
+    Quantidade de metros de cano para desentupir
+    <input type="text" id='mtr' placeholder='metros'><br><br>
+
+    <button onclick="orc()" style="background-color: royalblue;">orçamento</button>
+
+    <div id='div_orc'></div>
+
+
+
+
+</body>
+
+</html>
+
+<script>
+    function orc() {
+
+        var nic = mtr.value * 10 + 50
+        var roti = mtr.value * 9.80 + 600
+        var dif = roti - nic
+
+        div_orc.innerHTML =
+            `<b>com Nicanor fica:</b> ${nic} <br> 
+             <b>com Rotirute fica:</b> ${roti} <br> 
+             <b>a diferença é de:</b> ${dif}`
+
+    }
+
+</script>

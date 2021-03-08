@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 13</title>
+</head>
+<body>
+    
+    <button onclick="frutas()">Frutas</button>
+    <button onclick="legumes()">Legumes</button>
+    <button onclick="carnes()">Carnes</button>
+    <button onclick="guloseimas()">Goloseimas</button>
+
+    <div id="div_lista">
+        <h3>Lista de compras</h3>
+    </div>
+
+</body>
+</html>
+<script>
+    function frutas() {
+        // o += NÃO TROCA o conteúdo de uma tag. Ele incrementa, ou seja, adiciona
+        // o que vem depois dele ao corpo da tag
+        div_lista.innerHTML += "* Frutas <br>";
+    }    
+    function legumes() {
+        div_lista.innerHTML += '* Legumes <br>';
+    }    
+    function carnes() {
+        div_lista.innerHTML += '* Carnes <br>';
+    }    
+    function guloseimas() {
+        div_lista.innerHTML += '* Goloseimas <br>';
+    }    
+</script>

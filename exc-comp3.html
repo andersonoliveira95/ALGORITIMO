@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Orçamento Gramario</h2>
+
+quantidade m2 de grama que serão necessários:
+<input type="text" id='m2grama' placeholder='M2 de grama'><br><br>
+
+<button onclick="orcamento()" style="background-color: yellowgreen;">calcular orçamento</button><br><br>
+
+<div id='div_orc'></div>
+
+
+</body>
+</html>
+
+<script>
+function orcamento(){
+
+    var esmeralda = m2grama.value * 9.70 
+    var batatais = m2grama.value * 8.70
+    var saoC = m2grama.value * 10.70
+    var esmtotal = esmeralda + 150
+    var batatotal = batatais + 200
+    var saoCtotal = saoC + 100
+   
+
+    div_orc.innerHTML = 
+    `<b> Para ${m2grama.value} m2 de grama, nosso orçamento é:</b> <br><br>
+    grama esmeralda = R$ ${esmeralda},  frete = R$ 150,00 , valor total R$ ${esmtotal} <br>
+    grama batatais = R$ ${batatais},  frete = R$ 200,00 , valor total R$ ${batatotal} <br>
+    grama São Carlos = R$ ${saoC},  frete = R$ 100,00 , valor total R$ ${saoCtotal}`
+  
+}
+
+
+</script>

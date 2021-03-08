@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Economia com sistema da Luzdia</h2>
+
+    quantidade de lampadas necessarias:
+    <input type="text" id='lamp' placeholder='qnt de lampadas'><br>
+    valor medio da conta de Luz:
+    <input type="text" id='conta' placeholder='media da conta de luz'><br> <br>
+    <button onclick="economia()" style="background-color: yellowgreen;">Enter</button><br><br>
+
+    <div id='div_rst'></div>
+
+
+</body>
+
+</html>
+
+<script>
+    function economia() {
+        var invst = lamp.value * 20
+        var eco = conta.value / 10
+        var retorno = invst / eco
+
+
+        div_rst.innerHTML =
+            `O seu investimento em lâmpadas será de R$ ${invst} <br>
+    
+             A sua economia na conta de luz será de R$ ${eco} <br>
+
+             Portanto, em ${retorno} meses o seu investimento será retornado`
+    }
+
+
+</script>

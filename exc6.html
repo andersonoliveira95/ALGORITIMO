@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Rachando a pizza</h2>
+    Sabor da pizza:
+<input type="text" id='pzz' placeholder="Sabor da pizza"><br>
+
+    preço da pizza:
+    <input type="text" id='preco' placeholder="preço"><br>
+
+    quantidade de amigos que vão comer:
+    <input type="text" id='qtdamg' placeholder="qnt de amigos"><br><br>
+
+    <button onclick="pizza()" style="background-color: royalblue;">Ver valor por amigo</button><br><br>
+
+    <div id='div_total'></div>
+
+
+
+
+</body>
+</html>
+
+<script>
+function pizza(){
+var rachar = preco.value / qtdamg.value
+
+div_total.innerHTML = `Cada amigo vai colaborar com <u>R$ ${rachar}</u> para a pizza de ${pzz.value}`
+}
+
+</script>
