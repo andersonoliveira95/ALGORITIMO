@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 20</title>
+</head>
+<body>
+    <h2>Verdades secretas!</h2>
+ 
+    <button id="bt1" style="display: block;" onclick="mostrar_verdade()">Ver uma verdade</button>
+    <button id="bt2" style="display: none;" onclick="esconder_verdade()">Esconder uma verdade</button>
+    <br>
+    <!--display: none; torna um elemento INVISÍVEL-->
+    <div id="div_verdade" style="display: none;">
+        você é escravo do que fala e senhor doque cala
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function mostrar_verdade(){
+        // fazer um elemento ficar visivel com div_verdade.style.display ='block'
+        div_verdade.style.display ='block'
+        bt1.style.display =" none"
+        bt2.style.display ="block"
+
+
+    }
+    function esconder_verdade(){
+        // fazer um elemento ficar invisivel com div_verdade.style.display ='none'
+        div_verdade.style.display ="none"
+        bt2.style.display ="none"
+        bt1.style.display ="block"
+        
+    }
+</script>

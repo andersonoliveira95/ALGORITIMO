@@ -1,0 +1,14 @@
+img{
+    height: 200px;
+}
+button{
+    border-radius: 4px;
+    background-color: rgb(101, 202, 202);
+    color: darkslategray;
+    box-shadow: 1px 2px 0.5;
+}
+h2{
+    font-size: 300;
+    font-family: 'Times New Roman', Times, serif;
+    color: darkslategrey;
+}

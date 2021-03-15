@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variavel global</title>
+</head>
+<body>
+    <h1>Quem guarda Tem!!!</h1>
+    <br>
+    <input id="inicial" placeholder="valor" type="text">
+   <br><br>
+   <button onclick="retirar()">Retirar do Cofrinho</button>
+   <br>
+   <button onclick="depositar()">Depositar no Cofrinho</button>
+   <br><br>
+   <p id="total_cofrinho"></p>
+
+
+
+</body>
+</html>
+
+<script>
+
+var inicio = 0
+
+
+
+function retirar(){
+     var input = Number(inicial.value)
+    
+inicio = inicio - input
+
+total_cofrinho.innerHTML = `O valor que está guardado no seu cofrinho é de R$ ${inicio.toFixed(2)}`
+
+}
+
+function depositar(){
+    var input = Number(inicial.value)
+    
+  inicio = inicio + input
+
+
+total_cofrinho.innerHTML = `O valor que está guardado no seu cofrinho é de R$ ${inicio.toFixed(2)}`
+}
+
+
+
+
+</script>
