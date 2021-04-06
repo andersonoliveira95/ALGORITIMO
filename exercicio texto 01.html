@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercico 01</title>
+</head>
+<body>
+    <h2>informe seu email</h2>
+    <input placeholder="o email deve conter o @" id="inp_email" onkeyup="validar ()">
+    <br><br>
+    <div id="alerta"></div>
+</body>
+</html>
+
+<script>
+function validar(){
+    var email = inp_email.value ;
+    var valid_email = email.indexOf('@');
+
+    if (valid_email < 0) {
+      alerta.innerHTML = `<b style="color:red">Esse email é invalido , por favor verifique e tente novamente </b>` 
+    } else {
+        alerta.innerHTML = ` <b style="color:green"> email valido </b>` 
+    }
+}
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 28 else if</title>
+</head>
+
+<body>
+    <h1>Classificação do Perfil dos Clientes</h1>
+    <br>
+    <input id="inp_saldo" placeholder="digite seu saldo">
+    <br><br>
+    <button onclick="analisar ()">analisar</button>
+
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var saldo = inp_saldo.value
+
+        if (saldo >= 5000) {
+            alert('Perfilde Investidor');
+        }
+        else if (saldo > 2000) {
+            alert('Perfil Saldo acima da média');
+        }
+        else if (saldo >= 0) {
+            alert('Perfil Saldo normal');
+        }
+        else {
+            alert('Perfil de Devedor');
+        }
+    }
+</script>

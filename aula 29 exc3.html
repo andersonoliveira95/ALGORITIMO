@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio </title>
+</head>
+<body>
+    <h1>Temperatura do ambiente</h1>
+    <br>
+    <input id="temperatura" placeholder="Informe a Temperatura">
+    <br><br>
+    <button onclick="analisar()">Medir conforto</button>
+    <br><br>
+    <span id="resultado"></span>
+</body>
+</html>
+
+<script>
+    function analisar () {
+        var clima = temperatura.value;
+
+      if(clima >=22 && clima <=23){
+        resultado.innerHTML = `Temperatura confortavel`;
+      }
+      else {
+        resultado.innerHTML = `Temperatura não esta confortavel`;
+      }
+    }
+</script>

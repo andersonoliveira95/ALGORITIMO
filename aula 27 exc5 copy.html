@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 27</title>
+</head>
+<body>
+    <h1>exc 05</h1>
+
+    <input id="in_temperatura" placeholder="temperatura do ambiente">
+    <br><br>
+    <button onclick="analisar()">analisar clima</button>
+    <br><br>
+    <p id="resultado"></p>
+</body>
+</html>
+
+<script>
+    function analisar() { 
+        var temperatura = Number(in_temperatura.value);
+
+        if (temperatura > 23) {
+            resultado.innerHTML = `<b style="color:red">Quente!</b>`
+        }
+        else {
+            resultado.innerHTML = `<b style="color:green">Agradavel!</b>`
+        }  
+        if(temperatura < 20.5) {
+            resultado.innerHTML = `<b style="color:blue">Frio!</b>`
+        }
+    
+    }  
+</script>

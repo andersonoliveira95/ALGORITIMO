@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>exc 02</title>
+    <title>exc 03</title>
 </head>
 <link rel="stylesheet" href="time.css">
 <center>
@@ -14,16 +14,16 @@
         <h2>Qual sua fruta preferida</h2>
 
         <select name="" id="times">
-            <option value=""></option>
-            <option value="1" style="color: red;">São Paulo</option>
-            <option value="2" style="color: rgb(81, 211, 81);">Palmeiras</option>
-            <option value="3" style="color: rgb(155, 158, 153);">Santos</option>
-            <option value="4" style="color: rgb(0, 0, 0);">Corintia</option>
+            <option value="">Escolha um time</option>
+            <option value="https://i.pinimg.com/originals/05/10/66/051066bd9fd34185cdcb1ceb5b6ac6ea.png" style="color: red;">São Paulo</option>
+            <option value="https://logodownload.org/wp-content/uploads/2015/05/palmeiras-logo-0-1536x1536.png" style="color: rgb(81, 211, 81);">Palmeiras</option>
+            <option value="https://upload.wikimedia.org/wikipedia/commons/9/92/LogoSantosFC.png" style="color: rgb(121, 124, 118);">Santos</option>
+            <option value="https://i.pinimg.com/originals/eb/9c/fd/eb9cfd1b470f7f8d484934188ad640a9.png" style="color: rgb(0, 0, 0);">Corintia</option>
         </select>
         <br><br>
         <button onclick="bt_escudo()">Ver escudo</button>
         <br><br><br>
-        <spam id="spam_time"></spam>
+       <img src="" alt="" id="img_times">
 
 
 
@@ -33,23 +33,9 @@
 </html>
 <script>
     function bt_escudo() {
-        var escolha_time = times.value;
 
-        if (escolha_time == 1) {
-            spam_time.innerHTML = `<img  src="https://i.pinimg.com/originals/05/10/66/051066bd9fd34185cdcb1ceb5b6ac6ea.png" alt="São Paulo">`
-        }
-        else if (escolha_time == 2) {
-            spam_time.innerHTML = `<img src="https://logodownload.org/wp-content/uploads/2015/05/palmeiras-logo-0-1536x1536.png" alt="Palmeiras">`
-        }
-        else if (escolha_time == 3) {
-            spam_time.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/9/92/LogoSantosFC.png" alt="Santos">`
-        }
-        else if (escolha_time == 4) {
-            spam_time.innerHTML = `<img src="https://i.pinimg.com/originals/eb/9c/fd/eb9cfd1b470f7f8d484934188ad640a9.png" alt="Curintia">`
-        }
-        else{
-            spam_time.innerHTML = `<h2>Escolha Seu time</h2>`
-        }
+        img_times.src = times.value
+
     }
 
 </script>

@@ -9,7 +9,7 @@
 <body>
     <h2>Qual sua fruta preferida</h2>
     
-    <select name="Selecione sua fruta" id="frutas">
+    <select name="Selecione sua fruta" id="frutas" onchange="fruta()"> <!--onchange chama a função assim que vocÊ seleciona uma opção na box-->
         <option value="60"></option>
         <option value="33" style="color: red;">Morango</option>
         <option value="40" style="color: palegreen;">Melancia</option>
@@ -26,7 +26,7 @@
 </body>
 </html>
 <script>
-    function bt_fruta(){
+    function fruta(){
         var escolha_fruta = frutas.value;
 
         spam_fruta.innerHTML = ` Sua fruta favorita tem <b>${escolha_fruta}</b> calorias por unidade`;

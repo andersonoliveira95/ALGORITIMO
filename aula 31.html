@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operador logico "ou" ||</title>
+
+</head>
+<body>
+    <h3>qual sabor de picolé??</h3>
+    <select id="sel_sabor">
+        <option value="1">Abacaxi</option>
+        <option value="2">Morango</option>
+        <option value="3">Uva</option>
+        <option value="4">Limão</option>
+        <option value="5">Chocolate</option>
+    </select>
+    <br>
+    <button onclick="comprar()">Vai comprar?</button>
+</body>
+</html>
+<script>
+function comprar(){
+  var sabor = sel_sabor.value;
+  if(sabor == '2' || sabor == '5'){
+      alert('Vou comprar!');
+  }
+  else{
+      alert('Então esquece, não vou comprar');
+  }
+}
+
+
+
+
+</script>

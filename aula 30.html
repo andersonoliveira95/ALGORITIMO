@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 30</title>
+</head>
+
+<body>
+    <input id="inp_renda" placeholder="renda familiar">
+    <br><br>
+    <select id="qnt_pessoas">
+        <option value="">qnt de adultos</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <br><br>
+    <button onclick="verClasse()">Verificar classe social</button>
+    <br><br>
+    <span id="clase"></span>
+</body>
+
+</html>
+
+<script>
+    function verClasse() {
+        var renda = inp_renda.value;
+        var pessoa = qnt_pessoas.value;
+        var renda_individual = renda / pessoa;
+
+        if (renda <= 2166) {
+            clase.innerHTML = `<b style="color:red"> Classe D e E </b> <br>
+          A renda média de cada adulto é R$ ${renda_individual.toFixed(2)}`;
+        }
+        else if (renda <= 5223) {
+            clase.innerHTML = `<b style="color:blue"> Classe C </b> <br>
+            A renda média de cada adulto é R$ ${renda_individual.toFixed(2)}`;
+        }
+        else if (renda <= 16263) {
+            clase.innerHTML = `<b style="color:green"> Classe B </b><br>
+            A renda média de cada adulto é R$ ${renda_individual.toFixed(2)} <br>
+                <img src=" https://media0.giphy.com/media/bwLI2JHYHpD4c3UosX/giphy.gif" alt=""> `;
+        }
+        else {
+            clase.innerHTML = `<b style="color:yellow"> Classe A </b> <br>
+            A renda média de cada adulto é R$ ${renda_individual.toFixed(2)} <br>
+            <img src=" https://media0.giphy.com/media/bwLI2JHYHpD4c3UosX/giphy.gif" alt="">` ;
+        }
+    }
+
+</script>

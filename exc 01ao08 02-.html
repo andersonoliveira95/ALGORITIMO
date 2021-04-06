@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicios</title>
+</head>
+<body>
+   <h1>exercico 02</h1>
+   <br>
+
+   <input type="number" placeholder="insira nota 1" id="nota1">
+   <br><br>
+   <input type="number" placeholder="insira nota 2" id="nota2">
+   <br><br>
+   <input type="number" placeholder="insira nota 3" id="nota3">
+   <br><br>
+
+   <button onclick="calcular()">Analisar desempenho</button>
+   <br><br>
+
+   <p id="resultado"></p>
+   
+</body>
+</html>
+
+<script>
+    function calcular () {
+        var n1 = Number(nota1.value);
+        var n2 = Number(nota2.value);
+        var n3 = Number(nota3.value);
+        var nota_media = ( n1 + n2 + n3 ) / 3;
+    
+        if( nota_media <= 9.4 ){
+            resultado.innerHTML = `Sua média foi de ${nota_media.toFixed(2)}`;
+        }
+        else{
+            resultado.innerHTML = `Sua média foi de ${nota_media.toFixed(2)} <b style="color:blue"><i>Parabéns, você é fora de série!</i></b>`;
+            
+        }
+        
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>operador logico &&</title>
+
+</head>
+
+<body>
+  <input id="inp_rendaIndividual" placeholder="qual sua renda individual">
+  <br><br>
+  <input id="inp_rendaFamiliar" placeholder="qual a renda da familia">
+  <br><br>
+  <button onclick="verificar()">Verificar ajuda</button>
+</body>
+
+</html>
+
+<script>
+  function verificar() {
+    var rendaIndividual = inp_rendaIndividual.value;
+    var rendaFamilia = inp_rendaFamiliar.value;
+
+    if (rendaIndividual <= 1050 && rendaFamilia <= 2100) {
+      alert('Você tera direito');
+    }
+    else {
+      alert('Você Não tera direito');
+    }
+  }
+</script>

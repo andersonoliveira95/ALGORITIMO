@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 25</title>
+</head>
+
+<body>
+    <h1>'autofocus'</h1>
+
+  <!--auto focus coloca o cursor na teg que ele foi acionado, se tiver mais de um autofocus o que vier primeiro é o que sera considerado-->
+    <input type="number" placeholder="Valor da Pizza" id="vl_pizza" autofocus>
+    <br><br>
+    <input type="number" placeholder="quant de amigos" id="quant_amigos">
+    <br><br>
+    <button onclick="calcular()">Rola a pizza ?</button>
+    <br><br>
+
+    <p id="resultado"></p>
+
+</body>
+
+</html>
+
+<script>
+    function calcular () {
+        var vlPizza = Number(vl_pizza.value);
+        var qntAmigos = Number(quant_amigos.value);
+       
+        var vl_porAmigo = vlPizza / qntAmigos;
+        
+    
+        if( vl_porAmigo <= 20.00 ){
+            resultado.innerHTML = `Cada amigo vai pagar R$ ${vl_porAmigo.toFixed(2)} pela pizza`;
+        }
+        else{
+            resultado.innerHTML = `Cada amigo vai pagar R$ ${vl_porAmigo.toFixed(2)} pela pizza 
+                                   <br> <b>Deu ruim! Pizza muito cara!</b>`
+            
+        }
+        
+    }
+</script>
+    

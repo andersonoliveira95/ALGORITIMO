@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operador logico &&</title>
+
+</head>
+<body>
+    <input id="inp_nota" placeholder="insira a nota do aluno">
+    <br><br>
+    <input id="inp_frequencia" placeholder="insira a frequencia">
+    <br><br>
+    <button onclick="analisar()">analisar</button>
+</body>
+</html>
+
+<script>
+  function analisar(){
+    var nota = inp_nota.value;
+    var frequencia = inp_frequencia;
+
+    if(nota >=6 && frequencia > 75) {
+        alert('Você esta aprovado');
+    }
+    else{
+        alert('Você esta reprovado');
+    }
+  }
+</script>

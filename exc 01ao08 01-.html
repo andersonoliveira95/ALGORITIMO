@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicios</title>
+</head>
+<body>
+   <h1>exercico 01</h1>
+   <br>
+
+   <input type="number" placeholder="Quantos por dia ?" id="quant_refri">
+   <br><br>
+
+   <button onclick="calcular()">Quantos refris?</button>
+   <br><br>
+
+   <p id="resultado"></p>
+   
+</body>
+</html>
+
+<script>
+    function calcular () {
+        var quantRefri = Number(quant_refri.value);
+        var total_ano = quantRefri * 365;
+
+        if( total_ano <=499 ){
+            resultado.innerHTML = `Tiroso bebe consome um total de ${total_ano} refrigerantes por ano`;
+        }
+        else{
+            resultado.innerHTML = `Tiroso bebe consome um total de ${total_ano} refrigerantes por ano,
+                                  <br> <b style="background-color: red;color: white;">Cuidado com a diabetes!!!</b>`;
+            
+        }
+        
+    }
+</script>

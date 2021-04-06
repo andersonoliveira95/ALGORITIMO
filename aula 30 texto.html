@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operação com texto</title>
+</head>
+<body>
+    <h1>Operaçôes com texto</h1>
+    Digite uma frase: <input id="inp_frase" onkeyup="analisar()">
+    <br><br>
+
+    <div id="resultado"></div>
+    
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var ax_frase = inp_frase.value;
+        resultado.innerHTML = '';
+        // resultado.innerHTML = `Ela começa com a aletra "E"? ${ax_frase.startsWith('e')}`;
+        //  resultado.innerHTML = `Qanatidade de caracteres? ${ax_frase.length}`;
+        //  resultado.innerHTML = `Ela começa com a aletra "E"? ${ax_frase.startsWith('e') || ax_frase.startsWith('B')}`;
+        // resultado.innerHTML = `ela começa com a palavra "amor" ${ax_frase.startsWith('amor')}`;
+        // resultado.innerHTML = `ela começa com a frase "O amor constroe" ${ax_frase.startsWith('O amor constroe  ')}`;
+        // resultado.innerHTML = `ela começa com o numero "13" ${ax_frase.startsWith('13')}`;
+        // resultado.innerHTML = `ela termina com a letra "a" ${ax_frase.endsWith('a')}`;
+        // resultado.innerHTML = `ela termina com a palavra "abacaxi" ${ax_frase.endsWith('abacaxi')}`;
+        // resultado.innerHTML = `qual é a terceira letra" ${ax_frase[2]}`;
+        // resultado.innerHTML = `qual é a primeira letra" ${ax_frase[0]}`;
+        // resultado.innerHTML = `qual é a primeira letra" ${ax_frase[ax_frase.length-1]}`;
+          resultado.innerHTML = `Onde esta o primeiro "@" ${ax_frase.indexOf('@')}`;
+        //resultado.innerHTML = `Onde começa o primeiro "kkk" ${ax_frase.indexOf('kkk')}`;
+       
+       // var exPos = ax_frase.indexOf('kkk');
+        //if (exPos < 0 ) {
+          //resultado.innerHTML = `Onde começa o primeiro "kkk" ? o kkk não existe`;  
+       // }
+        //else{
+        //    `Onde começa o primeiro "kkk" ? ${exPos}`;
+       // }
+
+        // resultado.innerHTML = `como fica a frase em maiusculo ? ${ax_frase.toUpperCaser()}`
+    //   resultado.innerHTML = `frase em maiusculo é = ${ax_frase.toUpperCaser()}`;
+
+    }
+</script>

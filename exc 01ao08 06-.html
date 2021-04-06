@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicios</title>
+</head>
+<body>
+   <h1>exercico 06</h1>
+   <br>
+
+   <input type="number" placeholder="renda familiar" id="renda_fml" autofocus>
+   <br><br>
+   <input type="number" placeholder="valor da prestação" id="vl_prestacao">
+   <br><br>
+   <button onclick="calcular()">Verificar financiamento</button>
+   <br><br>
+
+   <p id="resultado"></p>
+   
+</body>
+</html>
+
+<script>
+    function calcular () {
+        var renda = Number(renda_fml.value);
+        var prestacao = Number(vl_prestacao.value);
+       
+        var vl_financiamento = (prestacao / renda) * 100 ;
+        
+    
+        if( vl_financiamento <= 30 ){
+            resultado.innerHTML = `a prestação corresponde a ${vl_financiamento}% da renda familiar  `;
+        }
+        else{
+            resultado.innerHTML =  `a prestação corresponde a ${vl_financiamento}% da renda familiar <br>
+                                    <b style="color:red">Será necessário complementar a renda familiar </b> `;
+            
+        }
+        
+    }
+</script>

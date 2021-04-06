@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc 02</title>
+</head>
+<body>
+    <h1>Temperatura hambiente</h1>
+    <br>
+    <input placeholder="informe a temperatura" id="temperatura">
+    <br><br>
+    <button onclick="medir()">Medir conforto</button>
+    <br><br>
+    <span id="resultado"></span>
+
+</body>
+</html>
+
+<script>
+    function medir(){
+        var temp = temperatura.value;
+
+        if(temp <=12){
+            resultado.innerHTML= `<b style="color:black"> congelante</b>`;
+        }
+        else if (temp <=19){
+            resultado.innerHTML= `<b style="color:blue"> Muito frio</b>`;
+        }
+        else if(temp <= 22){
+            resultado.innerHTML= `<b style="color:aqua">Friozinho Gostoso</b>`;
+        }
+        else if(temp <= 24){
+            resultado.innerHTML= `<b style="color:green">Temperatura confortavel</b>`;
+        }
+        else {
+            resultado.innerHTML= `<b style="color:red"> Tá calor</b>`;
+        }
+    }
+</script>

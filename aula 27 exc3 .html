@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 27</title>
+</head>
+      <h1>exc 03</h1>
+
+    <input id="in_media" placeholder="media do aluno">
+    <br><br>
+    <input id="in_frequencia" placeholder="frequencia do aluno">
+    <br><br>
+    <button onclick="avaliar()">avaliar</button>
+    <br><br>
+    <p id="resultado"></p>
+    <p id="p_frequencia"></p>
+</body>
+</html>
+
+<script>
+    function avaliar() { 
+        var media = Number(in_media.value);
+        var frequencia = Number(in_frequencia.value);
+
+        if(media >= 8 ){
+         resultado.innerHTML = "você estuda Muito";
+        }
+        else{
+         resultado.innerHTML = "você estuda pouco";
+        }
+
+       if (frequencia >= 60) {
+        p_frequencia.innerHTML = "Você falta pouco!";
+       } 
+       else {
+        p_frequencia.innerHTML = "Você falta muito!";  
+       }
+    }  
+</script>

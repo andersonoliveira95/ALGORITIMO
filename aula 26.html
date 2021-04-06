@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 26 - if & else</title>
+</head>
+<body>
+    <h1>Calcular valor de multas</h1>
+    <br>
+    <input placeholder="insira a quantidade de pontos" type="number" id="qnt_pontos" >
+     <br><br><br>
+    <button onclick=" vl_mutas()">Calcular valor de multas</button>
+    <br>
+   <p id="resultado"></p>
+
+</body>
+</html>
+
+<script>
+   function vl_mutas(){
+
+       var mutas = qnt_pontos.value * 78;
+
+       resultado.innerHTML = `O valor das multas serão de ${mutas.toFixed(2)}`
+       if (qnt_pontos.value >= 20 ) { alert ('Sua CNH esta <b>SUSPENSA</b>')
+           
+       }
+   }
+</script>

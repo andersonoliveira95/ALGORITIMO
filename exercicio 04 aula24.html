@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+
+<body>
+    <h2>Calculando a passagem</h2>
+
+    <input id="valor_passagem" placeholder="Valor da passagem">
+    <br><br>
+
+    <select id="tipo_passagem">
+        <option value="0">Selecione o tipo de passagem</option>
+        <option value="1">Inteira</option>
+        <option value="2">Meia Passagem</option>
+        <option value="3">Cartão Fidelidade</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="calcular_passagem()">Calcular passagem</button>
+
+    <br><br>
+
+    <span id="span_vt"></span>
+
+</body>
+
+</html>
+
+<script>
+    
+
+    function calcular_passagem() {
+        var custo_passagem =  Number(valor_passagem.value);
+        var meia = custo_passagem / 2 ;
+        var fidelidade = (custo_passagem / 10) * 9 ;
+
+
+       if(tipo_passagem.value == 1){
+        
+           span_vt.innerHTML = `Você vai pagar R$${custo_passagem.toFixed(2)} por passagem`;
+       }
+       else if(tipo_passagem.value == 2){
+        
+           span_vt.innerHTML = `Você vai pagar R$${meia.toFixed(2)} por passagem`;
+       }
+       else if(tipo_passagem.value == 3){
+        
+            span_vt.innerHTML = `Você vai pagar R$${fidelidade.toFixed(2)} por passagem`;
+       }
+       else {
+        span_vt.innerHTML = `Selecione seu tipo de passagem`;
+       }
+
+
+    }
+</script>
