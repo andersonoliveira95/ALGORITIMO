@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    entre com a Média <input id="inp_media">
+    <br><br>
+    entre com a frequencia <input id="inp_frequencia">
+    <br><br>
+
+    <button onclick="analisar ()">analisar</button>
+
+</body>
+
+</html>
+
+<script>
+    function analisar() {   // as variaveis boleanas so comportam true e false ,elas são geradas a partir do resultado de uma condição.
+
+        var ax_mediaOK = inp_media.value >= 6;
+        var ax_freq = inp_frequencia.value >= 75;
+
+
+       // alert(ax_mediaOK);
+        //alert(ax_freq);
+
+       if (ax_freq && ax_mediaOK) {
+           alert("aprovado");
+       } else {
+           alert("Reprovado");
+       }
+
+
+        // var ax_frase = "O amor é lindo";
+        //var ax_bolean = ax_frase.startsWith("f");
+
+        //if(ax_bolean){
+        //  alert("é verdadeira");
+        //}else{
+        //alert("é falso");
+        //}
+
+    }
+
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc operador ternario 01</title>
+</head>
+
+<body>
+
+    <h2>Verifique seu saldo</h2>
+    <br>
+    qual o saldo atual:<input id="inp_saldo">
+    <br>
+    qual valor do saque:<input id="inp_valorSaque">
+    <br><br>
+
+    <button onclick="analisar()">Analisar Conta</button>
+    <br><br>
+    <span id="spn_result"></span>
+
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var saldo = inp_saldo.value;
+        var saque = inp_valorSaque.value;
+        var atualSaldo = saldo - saque;
+
+     atualSaldo< 0 ? spn_result.innerHTML = `<b style="color:red"> O saldo atual da conta corrente é ${atualSaldo.toFixed(2)}</b>`
+                 : spn_result.innerHTML = `<i style="color:blue"> O saldo atual da conta corrente é ${atualSaldo.toFixed(2)}</i>`,
+                 alert('você esta no cheque especial');
+    }
+</script>

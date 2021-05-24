@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc operador ternario 01</title>
+</head>
+<body>
+    
+<h2>Você ja pode entrar na nossa auto escola</h2>
+<br>
+informe seu nome: <input id="inp_name">
+<br>
+informe sua idade: <input id="inp_idade">
+<br><br>
+<button onclick="avaliar()">Avaliar aluno</button>
+
+
+</body>
+</html>
+
+<script>
+    function avaliar(){
+        var idade = inp_idade.value;
+        var nome = inp_name.value;
+
+     alert(idade >= 18 ? nome +" vamos tirar a CNH?" : nome +" vai jogar PlayStation!");
+    }
+</script>

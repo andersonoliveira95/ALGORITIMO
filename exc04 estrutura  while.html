@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc while 04</title>
+</head>
+<body>
+    Qual a pessoa que você mais ama:<input id="inp_pessoa"> <br>
+    Quantas vezes você quer dizer isso:<input id="inp_vezes" ><br><br>
+    <button onclick="expressar()">Expressar amor</button>
+    <br><br>
+    <p id="p_frase"></p>
+</body>
+</html>
+
+<script>
+
+    function expressar(){
+      var pessoa = inp_pessoa.value;
+      var vezes = inp_vezes.value;
+      var contador = 0;
+
+
+      while (contador < vezes) {
+          p_frase.innerHTML +=`${pessoa}, eu te amo! <i>Sempre lembre disso!</i><br>`;
+          contador ++;
+      }
+    }
+</script>

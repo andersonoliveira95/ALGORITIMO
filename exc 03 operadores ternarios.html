@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc operador ternario 03</title>
+</head>
+<body>
+    
+<h2>Temperatura de Armazenamento</h2>
+<br>
+temperatura do ambiente:<input id="inp_temperatura">
+<br>
+<button onclick="comprar()">Comprar</button>
+<br><br>
+<span id="spn_vlCompra"></span>
+
+</body>
+</html>
+
+<script>
+    function comprar(){
+     var qntChocolate = inp_qntchocolate.value;
+     var valorUnidade = inp_qntchocolate.value < 12 ? valorUnidade = 3 : valorUnidade = 2.50 ;
+  
+     spn_vlCompra.innerHTML = `O valor da sua compra foi de R$ ${(qntChocolate * valorUnidade).toFixed(2)}`;
+    }
+</script>

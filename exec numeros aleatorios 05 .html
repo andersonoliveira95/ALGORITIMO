@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros aleatorios</title>
+</head>
+
+<body>
+    <h1>Avaliar atendimento</h1>
+    <button onclick="avaliar()">Avaliar</button>
+    <br><br>
+    <p id="p_mediaGeral"></p>
+    <br><br>
+    <img src="" alt="emoji" id="emoji" style="display: none;">
+</body>
+
+</html>
+      
+
+
+  
+
+<script>
+
+    var total_nota = 0;
+    
+    var qnt_avaliacao = 0;
+
+    function avaliar() {
+        var nota = Math.random() * 6;
+        var avaliacao = qnt_avaliacao ++;
+        total_nota = total_nota + nota
+        var media = total_nota / qnt_avaliacao ;
+        
+
+        p_mediaGeral.innerHTML = `A media geral é ${media.toFixed(2)} e o numero de avaliações é ${qnt_avaliacao}`;
+        
+       if(media > 4.5){
+        emoji.src = "https://cdn.shopify.com/s/files/1/1061/1924/files/Smiling_Emoji_with_Eyes_Opened_Icon_60x60.png";
+        emoji.style.display = 'block';
+       }
+       else if(media >3.5){
+        emoji.src = "https://cdn.shopify.com/s/files/1/1061/1924/files/Slightly_Smiling_Face_Emoji_Icon_60x60.png";
+        emoji.style.display = 'block'; 
+       }
+       else if(media > 1.5){
+        emoji.src = "https://cdn.shopify.com/s/files/1/1061/1924/files/Unamused_Face_Emoji_Icon_60x60.png";
+        emoji.style.display = 'block';
+       }
+       else if(media > 0.5){
+         emoji.src = "https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png";
+         emoji.style.display = 'block';
+       }
+       else {
+        emoji.src ="https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji_Icon_60x60.png";
+        emoji.style.display = 'block';
+       }
+    }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc while 06</title>
+</head>
+
+<body>
+    Qual tabuada você deseja ver?<br>
+    <select id="slc_tabuada" onchange="tabuada()">
+        <option value="">Escolha a sua tabuada de 1 ao 9</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+    <br><br>
+
+    <p id="p_tabuada"></p>
+
+</body>
+
+</html>
+
+<script>
+
+    function tabuada() {
+        var tabuada = slc_tabuada.value;
+        var mutiplicador = 1;
+        p_tabuada.innerHTML = ``;
+
+        while (mutiplicador < 10) {
+         var resultado = tabuada * mutiplicador;
+         p_tabuada.innerHTML += `${tabuada} x ${mutiplicador} = ${resultado}<br>`;
+         mutiplicador ++;
+        }
+
+    }
+</script>

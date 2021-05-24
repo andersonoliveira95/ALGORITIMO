@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc break 03</title>
+</head>
+
+<body>
+    <h1>Sorte no amor ou no jogo ?</h1>
+    <br><br>
+    <button onclick="ver()">Ver minha sorte</button>
+    <br><br><br>
+    <div id="div_img"> <img src="" alt=""> </div>
+    
+</body>
+
+</html>
+<script>
+    function ver() {
+        var amor = 0;
+        var jogo = 0;
+
+        var img_amor = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCq_GdPDw0cN3ezEwkXQmCtFXt-WNNZKIUMA&usqp=CAU";
+        var img_jogo = "https://www.bamfestas.com.br/556-tm_large_default/balao-metalizado-carta-de-baralho.jpg";
+
+        div_img.innerHTML = "";
+
+        for (var contador = 0; contador < 21; contador++) {
+            var sorteio = Math.random();
+          
+            var imagem;
+
+            if (sorteio < 0.5) {
+                imagem = img_amor;
+                amor++;
+            } else {
+                imagem = img_jogo;
+                jogo++;
+            }
+           
+            div_img.innerHTML += `<img style="height:100px;" src="${imagem}">`;
+
+            if(amor == 11 || jogo == 11){
+                break;
+            }
+        }
+
+        var resultado = (amor > jogo) ? 'Você tem mais sorte no amor': 'Você tem mais sorte no jogo';
+
+        div_img.innerHTML +=`<br> ${resultado}`
+    }
+
+</script>

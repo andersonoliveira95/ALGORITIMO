@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc vetor 01</title>
+</head>
+
+<body>
+    <h1>Filmes favoritos</h1>
+    <br>
+    informe seus filmes favoritos: <input type="text" id="inp_filmes" autofocus>
+    <br><br>
+    <button onclick="cadastrar()">cadastra filme</button>
+    <br>
+    <span id="result"></span>
+</body>
+
+</html>
+
+<script>
+    var filmesCadastro = [];
+
+    function cadastrar() {
+        var filme = inp_filmes.value;
+        filmesCadastro.push(filme);
+        inp_filmes.value = " ";
+         
+        var cor = filmesCadastro.length % 2 == 0 ? 'red' : 'blue';
+
+        result.innerHTML += `<br> <b style="color:${cor}">${filmesCadastro[filmesCadastro.length -1]}</b>`;
+    }
+
+ 
+</script>

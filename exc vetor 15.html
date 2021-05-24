@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc vetor 15</title>
+</head>
+
+<body>
+    <h1>Nome do bairro</h1>
+    <br>
+    informe o nome do bairro: <input id="inp_bairro" autofocus>
+    <br><br>
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="validar()">Validar</button>
+    <br><br>
+    <span id="result"></span>
+</body>
+
+</html>
+
+<script>
+    var bairros = [];
+ 
+    function registrar() {
+        var novo_bairro = inp_bairro.value;
+        bairros.push(novo_bairro);
+        inp_bairro.value = "";
+        
+        result.innerHTML += `${novo_bairro} <br>`;
+    }
+
+    function validar(){
+
+        // Iterando vetor
+        var invalidos = 0;
+
+        for(var posicao = 0; posicao < bairros.length; posicao++){
+
+          if(bairros[posicao].length < 2){
+             invalidos++;
+          }
+        }
+
+        alert(`Bairros invalidos: ${invalidos}`);
+    }
+</script>

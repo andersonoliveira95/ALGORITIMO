@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros aleatorios</title>
+</head>
+
+<body>
+    <h1>Momento do dia</h1>
+    <button onclick="ver_momento()">Sortear momento do dia</button>
+    <br><br>
+    <p id="p_momentoDia"></p>
+    
+</body>
+
+</html>
+      
+<script>
+
+    function ver_momento() {
+     
+      var momento_dia = parseInt(Math.random() * 24);
+        
+        
+       if(momento_dia > 17){
+           p_momentoDia.innerHTML = `"Boa noite, durma bem! São ${momento_dia} hrs!"`;
+       }
+       else if(momento_dia > 11){
+        p_momentoDia.innerHTML = `"Boa tarde, já vai tarde! São  ${momento_dia} hrs!"`;
+       }
+      
+       else {
+        p_momentoDia.innerHTML = `"Bom dia, flor do dia, são ${momento_dia} hrs!"`
+       }
+    }
+</script>

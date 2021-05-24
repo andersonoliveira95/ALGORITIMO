@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc vetor 01</title>
+</head>
+
+<body>
+    <h1>Alunos</h1>
+    <br>
+    cadastra nota: <input type="text" id="inp_notas" autofocus>
+    <br><br>
+    <button onclick="cadastrar()">cadastra nota</button>
+    <br><br>
+    <h2>analisar notas</h2>
+    analisar notas apartir: <input type="number" id="inp_menorNota"> 
+    <br><br>
+    <button onclick="analisar()">Analisar notas</button>
+    <br><br>
+    <span id="result"></span>
+</body>
+
+</html>
+
+<script>
+    var notas = [];
+
+    function cadastrar() {
+        var nota = Number(inp_notas.value);
+        notas.push(nota);
+        inp_notas.value = " ";
+    }
+
+    function analisar() {
+        var menorNota = Number(inp_menorNota.value);
+        var tamanho = notas.length;
+        var qntNotas = 0;
+        var somaNotas = 0;
+
+        for (var index = 0; index < tamanho; index++) {
+          
+          if(notas[index] >= menorNota){
+            qntNotas++;  
+            somaNotas += notas[index];
+
+            result.innerHTML +=`${notas[index]}<br>`;
+          }
+
+        }
+          
+        var media = somaNotas / qntNotas;
+
+        result.innerHTML += `<br>Foram cadastradas ${qntNotas} notas apartir de ${menorNota} a média dessas notas é ${media}`;
+    }
+</script>

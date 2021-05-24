@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc operador ternario 05</title>
+</head>
+<body>
+    
+<h2>vai rolar pizza?</h2>
+<br>
+valor maximo por amigo: <input id="inp_vlAmigo">
+<br>
+valor da pizza: <input id="inp_vlPizza">
+<br>
+quantidade de amigos: <input id="inp_qntAmigos">
+<br><br>
+<button onclick="avaliar()">Rola pizza?</button>
+<br><br>
+<span id="result"></span>
+
+
+</body>
+</html>
+
+<script>
+    function avaliar(){
+        var qntAmigos = inp_qntAmigos.value;
+        var valor_pizza = inp_vlPizza.value;
+        var vl_porAmigo = valor_pizza / qntAmigos;
+
+        result.innerHTML = `Cada amigo vai pagar R$${vl_porAmigo.toFixed(2)} pela pizza`;
+
+        vl_porAmigo > inp_vlAmigo.value ? result.innerHTML += `<br><b>Deu ruim! Pizza muito cara!</b>`
+                                         : result.innerHTML += `<br><b>Uhu! Vamos pedir a pizza!</b>`;
+    }
+</script>

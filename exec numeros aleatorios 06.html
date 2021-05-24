@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros aleatorios</title>
+</head>
+
+<body>
+    <h1>Fases da Lua</h1>
+    <button onclick="ver_fase()">Ver fases da Lua</button>
+    <br><br>
+    <p id="p_fases"></p>
+    <br><br>
+    <img src="" alt="" id="lua" style="display: none;">
+</body>
+
+</html>
+      
+
+
+
+
+<script>
+
+    function ver_fase() {
+     
+      var dia_mes = parseInt(Math.random() * 31) + 1;
+        
+
+        p_fases.innerHTML = `O dia sorteado é ${dia_mes}`;
+        
+       if(dia_mes < 8){
+           p_fases.innerHTML += "<b> Lua Nova</b>"
+        emoji.src = "https://cdn.shopify.com/s/files/1/1061/1924/files/Dark_moon_emoji_icon_png_200x200.png";
+        emoji.style.display = 'block';
+       }
+       else if(dia_mes < 17){
+        p_fases.innerHTML += "<b> Lua Cheia</b>"
+        lua.src = "https://cdn.shopify.com/s/files/1/1061/1924/files/Full_moon_emoji_icon_png_200x200.png";
+        lua.style.display = 'block'; 
+       }
+       else if(dia_mes < 23){ 
+        p_fases.innerHTML += "<b> Lua Minguante</b>"
+        lua.src = "https://cdn.shopify.com/s/files/1/1061/1924/files/First_quarter_moon_emoji_icon_png_200x200.png";
+        lua.style.display = 'block';
+       }
+     
+       else {
+        p_fases.innerHTML += "<b> Lua crescente</b>"
+         lua.src ="https://cdn.shopify.com/s/files/1/1061/1924/files/Waning_crescent_moon_emoji_icon_png_200x200.png";
+         lua.style.display = 'block';
+       }
+    }
+</script>

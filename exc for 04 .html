@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc for 04 </title>
+
+    <style>
+        img{
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sorteio</h1>
+    <br>
+    informe o numero de Sorteios: <input id="inp_sorteios" type="text" id="menor">
+    <br><br>
+    <BUtton onclick="sortear()">Sortear a sorte</BUtton>
+    <br><br>
+    <span id="result"></span>
+
+</body>
+
+</html>
+
+<script>
+
+    function sortear() {
+        var sorteios = inp_sorteios.value;
+
+        for (var contador = 1; contador <= sorteios; contador++) {
+
+            var num_random = parseInt((Math.random() * 10000));
+
+            if (num_random <= 1000) {
+                result.innerHTML += `<img src="https://assets.wprock.fr/emoji/joypixels/512/1f62d.png" alt=""><br> sorteio nº${contador} numero sorteado ${num_random}<br> `
+            }
+             else if(num_random <= 5000){
+                result.innerHTML += `<img src="https://images.emojiterra.com/google/android-10/512px/1f610.png" alt="" <br>sorteio nº${contador} numero sorteado ${num_random}<br>`
+            }else{
+                result.innerHTML += `<img src="https://img.playbuzz.com/image/upload/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_2.5/v1500347074/milqgb5a8qxnsqdagqgv.png" alt="" 
+                <br>sorteio nº${contador} numero sorteado ${num_random}<br>`
+            }
+        }
+    }
+</script>

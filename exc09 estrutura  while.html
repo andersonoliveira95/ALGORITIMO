@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc while 04</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: rgb(10, 25, 68);
+        }
+        button{
+            padding: 10px 5px;
+            background-color: rgb(123, 113, 191);
+            margin-top: 50px;
+            font-size: 20px;
+
+        }
+
+        img {
+            height: 100px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <button onclick="mostrar()">Amo o escudo do meu time!</button>
+        <br><br>
+        <div id="div_escudo"></div>
+    </center>
+</body>
+
+</html>
+
+<script>
+
+    function mostrar() {
+        contador = 0;
+
+        while (contador < 7) {
+            div_escudo.innerHTML += `<img src="https://i.pinimg.com/originals/dd/b9/3d/ddb93da0d4a43e81108b201a382302da.jpg" alt="Furia">`;
+            contador++;
+        }
+    }
+</script>

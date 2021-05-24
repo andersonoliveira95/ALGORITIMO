@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc vetor 01</title>
+</head>
+
+<body>
+    <h1>Alunos</h1>
+    <br>
+    informe o nome do aluno: <input type="text" id="inp_aluno" autofocus>
+    <br><br>
+    <button onclick="cadastrar()">cadastra aluno</button>
+    <button onclick="pesquisar()">Pesquisar</button>
+    <br><br>
+    <span id="result"></span>
+</body>
+
+</html>
+
+<script>
+    var alunos = [];
+ 
+    function cadastrar() {
+        var novo_aluno = inp_aluno.value;
+        alunos.push(novo_aluno);
+        inp_aluno.value = " ";
+        
+        result.innerHTML += `${novo_aluno} <br>`;
+    }
+
+    function pesquisar(){
+        var pesquisa = inp_aluno.value;
+
+        var encontrados = 0;
+
+        // Iterando vetor
+        for(var posicao = 0; posicao < alunos.length; posicao++){
+          var aluno_atual = alunos[posicao];
+
+          if(aluno_atual == pesquisa){
+              encontrados++;
+          }
+        }
+
+        alert(`alunos encontrados: ${encontrados}`);
+    }
+</script>

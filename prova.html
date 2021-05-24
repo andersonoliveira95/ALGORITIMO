@@ -5,69 +5,151 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prova</title>
+    <title>Prova continuada 2 - iadsA - 2021</title>
+
+    <style>
+        img {
+            height: 80px;
+        }
+    </style>
 </head>
 
 <body>
-    <img style="height: 200px;" src="https://www.dpk.com.br/wp-content/uploads/2019/03/gest%C3%A3o-do-estoque.png"
-        alt="estoque"> <br>
-    <h1>Gestoque! Guarde bem o que está contigo!</h1>
+    <h1>Campo minado Daora</h1>
     <br>
-    Nome do produto
-    <input type="text" id='nomep'><br>
-    Unidade (aqui será informado "unidades", "quilos", "litros" etc)
-    <input type="text" id='uni'><br>
-    Quantidade em estoque
-    <input type="text" id='quant'><br>
-    Valor de compra por Unidade
-    <input type="text" id='custo'><br>
-    Valor de venda por Unidade
-    <input type="text" id='lucro'><br><br>
-    <button onclick="estoque()" style="background-color: aquamarine;"><b> Calcular estoque </b></button><br><br>
-    
-    
-    <div id='div_est'></div><br>
-    
+    <button onclick="novo_jogo()">Novo jogo</button>
+    <br><br>
+    Minas: <span id="s_minas">?</span><br>
+    Explosoes:<span id="s_explosao">0</span><br>
+    pontos:<span id="s_pontos">0</span><br>
 
+    <br><br>
 
-
+    <img id="img1" style="display: none;" src="" alt="" onclick="virar1()" onkeyup="analisar()">
+    <img id="img2" style="display: none;" src="" alt="" onclick="virar2()" onkeyup="analisar()">
+    <br>
+    <img id="img3" style="display: none;" src="" alt="" onclick="virar3()" onkeyup="analisar()">
+    <img id="img4" style="display: none;" src="" alt="" onclick="virar4()" onkeyup="analisar()">
 </body>
 
 </html>
+
 <script>
-    function estoque() {
-        //variavel para calcular a diferença entre o custo e o valor de venda
-        var lucr1 = lucro.value - custo.value
+   
+    var explosoa = 0;
+    var pontos = 0;
+    var sorteio1 = 0;
+    var sorteio2 = 0;
+    var sorteio3 = 0;
+    var sorteio4 = 0;
+
+
+
+    function novo_jogo() {
+
+        sorteio1 = parseInt((Math.random() * 2) + 1);
+        sorteio2 = parseInt((Math.random() * 2) + 1);
+        sorteio3 = parseInt((Math.random() * 2) + 1);
+        sorteio4 = parseInt((Math.random() * 2) + 1);
+
+        var qntMinas = 0;
         
-       //variavel para calcular o valor em mercadoria
-        var ttl = quant.value * custo.value
-
-       //variaveis  para calcular a porcentagem de lucro 
-        var lt = (lucro.value / custo.value - 1) * 100
+        if(sorteio1 > 1){
+            qntMinas ++ ;
+        }
+        if(sorteio2 > 1){
+          qntMinas ++  ;  
+        }
+        if(sorteio3 > 1){
+          qntMinas ++ ;  
+        }
+        if(sorteio4 > 1){
+          qntMinas ++ ;  
+        }
         
-         
-        div_est.innerHTML +=  `<img style="height: 170px;" src="https://i.ytimg.com/vi/uePQGxKKTX0/hqdefault.jpg" alt="">`
+        s_minas.innerHTML = `${qntMinas}`;
 
-        
-        div_est.innerHTML += `<br><b>Resultado da analíse:</b><br><br>
-        <b> Você possui um total de ${quant.value} ${uni.value} de ${nomep.value} em estoque.
-            Você tem um total de R$ ${ttl} em estoque de ${nomep.value}.
-            Vai lucar R$ ${lucr1} em cada ${nomep.value} vendido.<br>
-        </b>    
-        <b style="color:green;">Como comprou cada unidade por ${custo.value} e vai vender por ${lucro.value}, sua margem de lucro será de ${lt}%.
-        </b>`
-        
-       div_est.innerHTML += ` <div id='div_f'style="background-color: red;float: left; width:${custo.value}% "></div>`;
+        img1.style.display = "inline";
+        img2.style.display = "inline";
+        img3.style.display = "inline";
+        img4.style.display = "inline";
 
-       div_est.innerHTML +=   `<div id='div_f2' style="background-color: green;float: left; width:${lt}% "></div><br>`; 
+        img1.src = "https://image0.flaticon.com/icons/png/128/84/84042.png";
+        img2.src = "https://image0.flaticon.com/icons/png/128/84/84042.png";
+        img3.src = "https://image0.flaticon.com/icons/png/128/84/84042.png";
+        img4.src = "https://image0.flaticon.com/icons/png/128/84/84042.png";
 
-       div_est.innerHTML += `<b>Composição do preço</b>`;
-
+        explosoa = 0;
+        pontos = 0;
        
 
+        s_explosao.innerHTML = "0";
+        s_pontos.innerHTML = "0";
 
     }
 
-    
+    function analisar (){
+        if(qntMinas== 1 && pontos == 300){
+        alert("Parabens!!! você encontrou todos os campos NÃO minados");
+        }
+        if(qntMinas== 2 && pontos == 200){
+        alert("Parabens!!! você encontrou todos os campos NÃO minados");
+        }
+        if(qntMinas== 3 && pontos == 100){
+        alert("Parabens!!! você encontrou todos os campos NÃO minados");
+        }
+        if(qntMinas== 4 && pontos == 0){
+        alert("Todos os campos estão minados");
+        }
+    }
+     
+
+    function virar1() {
+        if (sorteio1 == 1) {
+            img1.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+            pontos = pontos + 100;
+            s_pontos.innerHTML = `${pontos}`
+        } else {
+            img1.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+            explosoa = explosoa + 1;
+            s_explosao.innerHTML = `${explosoa}`;
+        }
+    }
+
+    function virar2() {
+        if (sorteio2 == 1) {
+            img2.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+            pontos = pontos + 100;
+            s_pontos.innerHTML = `${pontos}`
+        } else {
+            img2.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+            explosoa = explosoa + 1;
+            s_explosao.innerHTML = `${explosoa}`;
+        }
+    }
+
+    function virar3() {
+        if (sorteio3 == 1) {
+            img3.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+            pontos = pontos + 100;
+            s_pontos.innerHTML = `${pontos}`
+        } else {
+            img3.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+            explosoa = explosoa + 1;
+            s_explosao.innerHTML = `${explosoa}`;
+        }
+    }
+
+    function virar4() {
+        if (sorteio4 == 1) {
+            img4.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+            pontos = pontos + 100;
+            s_pontos.innerHTML = `${pontos}`
+        } else {
+            img4.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+            explosoa = explosoa + 1;
+            s_explosao.innerHTML = `${explosoa}`;
+        }
+    }
 
 </script>

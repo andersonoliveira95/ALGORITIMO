@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc vetor 01</title>
+</head>
+
+<body>
+    <h1>Filmes favoritos</h1>
+    <br>
+    lugares para onde já viajou: <input type="text" id="inp_locais" autofocus>
+    <br><br>
+    <button onclick="cadastrar()">cadastra filme</button>
+    <br><br>
+    qual viagem gostaria de relembrar: <input type="number" id="num_viagem" autofocus>
+    <button onclick="relembrar()">Relembrar viagem</button>
+    <br><br>
+    <span id="result"></span>
+</body>
+
+</html>
+
+<script>
+    var viagemCadastro = [];
+
+    function cadastrar() {
+        var filme = inp_locais.value;
+        viagemCadastro.push(filme);
+        inp_locais.value = " ";
+    }
+
+    function relembrar() {
+        var numero_viagem = num_viagem.value -1;
+         
+        if(numero_viagem > viagemCadastro.length){
+            result.innerHTML += `Você não fez uma ${num_viagem.value}ª viagem!<br>`;
+        }else{ 
+            result.innerHTML += `Sua ${num_viagem.value}ª viagem foi para <b>${viagemCadastro[numero_viagem]}</b><br>`
+         }
+       
+    }
+</script>

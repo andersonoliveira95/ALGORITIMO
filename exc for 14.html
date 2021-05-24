@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc 14 de for</title>
+</head>
+
+<body>
+    <h1>Elevador</h1>
+    Andar Atual: <input type="number" id="inp_atual">
+    <br><br>
+    Andar Solicitado: <input id="inp_solicitado" type="number">
+    <br><br>
+    <button onclick="partir()">Partir</button>
+    <br><br>
+    <img src="" alt="" id="elevador" style="height: 150px;">
+    <br><br>
+    <div id="result"></div>
+    
+</body>
+
+</html>
+
+<script>
+    function partir() {
+        var andar_atual = Number(inp_atual.value);
+        var andar_slct = Number(inp_solicitado.value);
+        var val_atual = andar_atual > -1 && andar_atual < 21;
+        var val_slct = andar_slct > -1 && andar_slct < 21;
+
+        if (val_atual && val_slct) {
+            if (andar_atual < andar_slct) {
+                result.innerHTML = `Andar atual(${andar_atual}) menor que o andar solicitado(${andar_slct})<br> Subindo!!<br><br>`;
+
+                for (var contador = andar_atual; contador <= andar_slct; contador++) {
+
+                    result.innerHTML += `elevador no andar ${contador}<br>`;
+                }
+
+            } else {
+                result.innerHTML = `Andar atual(${andar_atual}) menor que o andar solicitado(${andar_slct})<br> Descendo!!<br><br>`;
+
+                for (var contador = andar_atual; contador >= andar_slct; contador--) {
+
+                    result.innerHTML += `elevador no andar ${contador}<br>`;
+                }
+            }
+          
+            elevador.src ="https://static.tudointeressante.com.br/uploads/2016/10/Paternostern-gif.gif";
+
+        } else {
+           alert("Andares válidos: entre 0 e 20");
+        }
+        
+    }
+</script>

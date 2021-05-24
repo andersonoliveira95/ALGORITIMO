@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc for 07 </title>
+</head>
+
+<body>
+    <h1>numeros impares de 1 á 100</h1><br>
+    <BUtton onclick="ver()">ver impares</BUtton>
+    <br><br>
+    <span id="result"></span>
+
+</body>
+
+</html>
+
+<script>
+    function ver() {
+        for (var contador = 1; contador <= 100; contador++) {
+            if(contador%2 > 0 ){
+                result.innerHTML += `${contador} <br>`;
+            } 
+        }
+    }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc 10 de for</title>
+</head>
+
+<body>
+    <h1>Curto 3 e 5!!!</h1>
+    <br>
+    <button onclick="curtir()">Curto 3 e 5!</button>
+    <br><br>
+    <span id="result"></span>
+</body>
+
+</html>
+
+<script>
+    
+    function curtir() {
+
+        
+
+        for (var contador = 0;contador <= 100; contador++) {
+             
+            
+
+            if (contador % 3 == 0 && contador % 5 == 0) {
+                result.innerHTML += `<b>É TRI!É PENTA!</b><br>`;
+            }
+            else if(contador % 5 == 0){
+                result.innerHTML += `<b>É PENTA!</b><br>`;
+            }
+             else if(contador % 3 == 0){
+                result.innerHTML += `<b>É TRI!</b><br>`;
+            }else{
+                result.innerHTML += `${contador}<br>`;
+            }
+            
+           
+        }
+    }
+    
+</script>

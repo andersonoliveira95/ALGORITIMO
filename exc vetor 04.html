@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc vetor 01</title>
+</head>
+
+<body>
+    <h1>Alunos</h1>
+    <br>
+    informe o nome do aluno: <input type="text" id="inp_alunos" autofocus>
+    <br><br>
+    <button onclick="cadastrar()">cadastra aluno</button>
+    <br><br>
+    <span id="result"></span>
+</body>
+
+</html>
+
+<script>
+    var alunos = [];
+ 
+    function cadastrar() {
+        var aluno = inp_alunos.value;
+        alunos.push(aluno);
+        inp_alunos.value = " ";
+        
+        var contador = alunos.length;
+
+        result.innerHTML =" ";
+
+        for (var index = 0; index < contador; contador--) {
+            result.innerHTML +=`${alunos[contador -1]}<br>`;
+        }        
+    }
+</script>

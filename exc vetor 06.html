@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc vetor 06</title>
+</head>
+
+<body>
+    <h1>Alunos</h1>
+    <br>
+    cadastra numero:<input type="text" id="inp_numero" autofocus>
+    <br><br>
+    <button onclick="cadastrar()">cadastra numero</button>
+    <br><br>
+    <h2>Historico</h2>
+    <br><br>
+    <button onclick="analisar()">ver Historico</button>
+    <br><br>
+    <span id="result"></span>
+</body>
+
+</html>
+
+<script>
+    var numero = [];
+
+    function cadastrar() {
+        var num = Number(inp_numero.value);
+        numero.push(num);
+        inp_numero.value = " ";
+    }
+
+    function analisar() {
+        var tamanho = numero.length;
+        var qntNum = 0;
+        var somaNotas = 0;
+        var maior = 0;
+        var menor = 0;
+
+        result.innerHTML = " ";
+
+        for (var index = 0; index < tamanho; index++) {
+            
+            if(numero[index] <= menor || numero[index] < maior){
+               menor = numero[index]; 
+            }else{
+                maior = numero[index];
+            }
+            
+            qntNum++;
+            somaNotas += numero[index];
+
+            result.innerHTML += `${qntNum}º ${numero[index]}<br>`;
+        }
+
+        var media = somaNotas / qntNum;
+
+        result.innerHTML += `<br> <br>  Maior:${maior} <br> Menor:${menor} <br> Média: ${media} <br> Total: ${somaNotas}`;
+    }
+</script>

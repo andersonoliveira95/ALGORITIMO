@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercico 01</title>
+</head>
+<body>
+    <h2>informe seu nome</h2>
+    <input placeholder="o nome precisa ter no minimo 10 caracteres" id="inp_name" onkeyup="validar ()">
+    <br><br>
+    <div id="alerta"></div>
+</body>
+</html>
+
+<script>
+function validar(){
+    var nome = inp_name.value;
+    var end_trim = nome.trimEnd();
+    var start_trim = nome.trimStart();
+    var valid_nome = nome.length;
+    var fogo = nome.indexOf('fogo')
+
+    if ((nome != start_trim) || (nome != end_trim) || (valid_nome < 10)) {
+      alerta.innerHTML = `<b style="color:red">Esse nome é invalido , por favor verifique e tente novamente </b>` 
+    } else {
+        alerta.innerHTML = ` <b style="color:green"> nome valido </b>` 
+    }
+    if (fogo >=0) {
+        alert('Com fogo não se brinca');        
+    }
+}
+</script>

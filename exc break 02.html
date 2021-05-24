@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc break 01</title>
+</head>
+<body>
+    <h1>Numero da sorte!!</h1>
+     <br>
+     Qual seu numero da Sorte: <input type="number" id="inp_nsorte" placeholder="insira o numero da Sorte">
+     <br><br>
+     <button onclick="testar()">Testar minha sorte</button>
+     <br><br>
+     <span id="result"></span>
+</body>
+</html>
+
+<script>
+    function testar(){
+        result.innerHTML =` `;
+
+        var n_sorte = inp_nsorte.value;
+        var contador = 1;
+
+        while (contador <=30) {
+            var nmrSorteado = parseInt((Math.random() * 100) );
+            console.log(nmrSorteado);
+            
+            //result.innerHTML +=`Sorteio ${contador}: ${nmrSorteado}<br>`;
+
+            if (n_sorte ==nmrSorteado) {
+               result.innerHTML += `Muito bem, você é uma pessoa de sorte! Seu número saiu no ${contador}º sorteio`;
+               break;
+            }
+            if(contador == 30){
+            result.innerHTML += `É, você não tem muita sorte em sorteios, pelo visto`;
+             }
+        
+            contador ++
+        }
+        
+        
+          
+
+      
+        
+    }
+</script>

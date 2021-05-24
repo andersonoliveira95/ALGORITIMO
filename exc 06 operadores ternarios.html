@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc operador ternario 06</title>
+</head>
+<body>
+    
+<h2>Você ja pode entrar na nossa auto escola</h2>
+<br>
+informe sua frequencia de 0 á 100: <input type="number" id="inp_frequencia">
+<br><br>
+<button onclick="analisar()">Analisar frequência</button>
+  <br><br>
+<img id="img_frequencia" src="" alt="aluno" style="height: 200px; display: none;">
+
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var frequencia = inp_frequencia.value;
+
+      frequencia < 75 ? img_frequencia.src = "https://thumbs.dreamstime.com/z/turista-novo-32712608.jpg"
+     :img_frequencia.src = "https://educadordofuturo.com.br/wp-content/uploads/2020/07/aluno-tutor-google-for-education.jpg";
+
+     img_frequencia.style.display = "block";
+    }
+</script>

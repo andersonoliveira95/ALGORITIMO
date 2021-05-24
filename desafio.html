@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div_dados">
+        loja: <input type="text" id="inp_loja">
+        <br>
+        conta: <input type="" id="inp_conta">
+        <br>
+        digito: <input type="text" id="digito">
+        <br><br>
+        <button onclick="conferir()">Conferir</button>
+    </div>
+
+    <div id="login" style="display: none;">Olá cliente XXXXXX entre com a sua senha para a Conta CCCCCC-D da Loja LL”,
+        onde XXXXXX é o nome do Cliente, CCCCCC é a conta do Cliente, D é o dígito da conta e LL é a Loja, todos do item
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function conferir() {
+        var loja = Number(inp_loja.value);
+        var conta = Number(inp_conta.value);
+        var digito = Number(digito);
+        var val_digito = conta % loja;
+
+        if (loja < 0 && loja > 10) {
+            alert("loja invalida");
+        } else {
+            if (conta < 1) {
+                alert("conta invalida");
+            } else {
+                if (val_digito < 3 && digito != 1) {
+                    alert("digito invlaido");
+                } else if (val_digito < 6 && digito != 2) {
+                    alert("digito invlaido");
+                } else if (val_digito > 6 && digito != 3) {
+                    alert("digito invlaido");
+                } else {
+                    div_dados.style.display = "none";
+                    login.style.display = "block";
+                }
+
+            }
+
+        }
+
+    }
+</script>

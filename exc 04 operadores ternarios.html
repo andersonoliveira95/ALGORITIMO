@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc operador ternario 04</title>
+</head>
+<body>
+    
+<h2>Elevador</h2>
+<br>
+quantidade de homens que embarcaram: <input id="inp_qnthomem">
+<br>
+quantidade de mulheres que embarcaram: <input id="inp_qntmulher">
+<br><br>
+<button onclick="analisar()">Analisar peso</button>
+<br><br>
+<span id="resultado"></span>
+
+
+</body>
+</html>
+
+<script>
+    function analisar(){
+       var peso_homem = inp_qnthomem.value * 80;
+       var peso_mulher = inp_qntmulher.value * 60;
+       var peso_total = peso_homem + peso_mulher;
+
+       resultado.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${peso_total}`;
+
+       
+       peso_total > 800 ? resultado.innerHTML += `<br>Será necessário descer alguém para que o elevador se movimente`
+                        :resultado.innerHTML +=  `<br>Elevador pode partir!!!`;
+       
+    }
+</script>

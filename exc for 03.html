@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc for 03 </title>
+</head>
+
+<body>
+    qual o melhor time do brasil <input id="inp_melhor" placeholder="qual o melhor time"> <br>
+    qual o pior time do brasil <input id="inp_pior" placeholder="qual o pior time"><br><br>
+    <button onclick="realidade()">Repetir a realidade!</button>
+    <br><br>
+    <p id="p_frase"></p>
+
+</body>
+
+</html>
+
+<script>
+  function realidade(){
+    var melhor = inp_melhor.value;
+      var pior = inp_pior.value;
+
+      for (var contador = 1; contador <= 10; contador++) {
+        p_frase.innerHTML +=` ${melhor} é melhor do que o ${pior}!<br>`;
+          
+      }
+
+  }
+</script>

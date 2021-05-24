@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exc 13 de for</title>
+</head>
+
+<body>
+    <h1>Fatorial</h1>
+    <br>
+    escolha um numero para ver o Fatorial <input id="inp_numero" type="number" placeholder="insira o numero aqui">
+    <br><br>
+    <button onclick="calcular()">Ver investimento</button>
+    <br><br>
+    <div id="result"></div>
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+
+        var numero = Number(inp_numero.value);
+        var resultado = 1;
+
+        result.innerHTML = `Fatorial de ${numero}: `
+
+        for(var contador = 0; contador < numero; numero --) {
+            
+            if(numero > 1){
+                result.innerHTML += `${numero}x`;
+                resultado = resultado * numero;
+            }else{
+                result.innerHTML += `${numero}`;
+                resultado = resultado * numero;
+            }
+            
+        }
+
+        result.innerHTML += ` = ${resultado}`;
+    }
+</script>
