@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>prova algoritmo 3 sprint</title>
+
+    <style>
+        img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Vamos testar sua sorte</h1>
+    <br>
+    <br> qual fruta você escolhe?
+    <select name="" id="slc_frutas">
+        <option value="melancia">Melancia</option>
+        <option value="banana">Banana</option>
+        <option value="cereja">Cereja</option>
+        <option value="laranja">Laranja</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="sortear()">Pagar R$2,00 e sportea</button>
+    <button onclick="encerrar()">Encerrar noitada</button>
+    <br>
+    <br>
+    <img src="" alt="" id="fruta1">
+    <img src="" alt="" id="fruta2">
+    <img src="" alt="" id="fruta3">
+    <img src="" alt="" id="fruta4">
+    <br>
+    <br>
+    <div id="result"></div>
+    <br>
+    <div id="result2"></div>
+</body>
+
+</html>
+
+<script>
+    var qtd_rodadas = 0;
+    var frutas_slc = [];
+    var frutas_sorteadas = [];
+    var ganhos = [];
+    var total_ganhos = 0;
+
+    function sortear() {
+        sorteio1 = parseInt((Math.random() * 4) + 1);
+        sorteio2 = parseInt((Math.random() * 4) + 1);
+        sorteio3 = parseInt((Math.random() * 4) + 1);
+        sorteio4 = parseInt((Math.random() * 4) + 1);
+        var melancia = 0;
+        var banana = 0;
+        var cereja = 0;
+        var laranja = 0;
+        var fruta = slc_frutas.value;
+
+        // variavel ue guarda as frutas sorteadas na rodada
+        var frutas_rodadas = "";
+
+
+        // sorteio1
+        if (sorteio1 == 1) {
+            fruta1.src = "melancia.jpg";
+            melancia++;
+            frutas_rodadas += "melancia -";
+
+        } else if (sorteio1 == 2) {
+            fruta1.src = "banana.jpg";
+            banana++;
+            frutas_rodadas += "banana -";
+
+        } else if (sorteio1 == 3) {
+            fruta1.src = "cereja.jpg";
+            cereja++;
+            frutas_rodadas += "cereja -";
+
+        } else {
+            fruta1.src = "laranja.jpg"
+            laranja++;
+            frutas_rodadas += "laranja -";
+        }
+
+        // sorteio2
+        if (sorteio2 == 1) {
+            fruta2.src = "melancia.jpg";
+            melancia++;
+            frutas_rodadas += "melancia -";
+
+        } else if (sorteio2 == 2) {
+            fruta2.src = "banana.jpg";
+            banana++;
+            frutas_rodadas += "banana -";
+
+        } else if (sorteio2 == 3) {
+            fruta2.src = "cereja.jpg";
+            cereja++;
+            frutas_rodadas += "cereja -";
+
+        } else {
+            fruta2.src = "laranja.jpg"
+            laranja++;
+            frutas_rodadas += "laranja -";
+        }
+
+        // sorteio3
+        if (sorteio3 == 1) {
+            fruta3.src = "melancia.jpg";
+            melancia++;
+            frutas_rodadas += "melancia -";
+
+        } else if (sorteio3 == 2) {
+            fruta3.src = "banana.jpg";
+            banana++;
+            frutas_rodadas += "banana -";
+
+        } else if (sorteio3 == 3) {
+            fruta3.src = "cereja.jpg";
+            cereja++;
+            frutas_rodadas += "cereja -";
+
+        } else {
+            fruta3.src = "laranja.jpg"
+            laranja++;
+            frutas_rodadas += "laranja -";
+        }
+
+
+        // sorteio4
+        if (sorteio4 == 1) {
+            fruta4.src = "melancia.jpg";
+            melancia++;
+            frutas_rodadas += "melancia -";
+
+        } else if (sorteio1 == 2) {
+            fruta4.src = "banana.jpg";
+            banana++;
+            frutas_rodadas += "banana -";
+
+        } else if (sorteio1 == 3) {
+            fruta4.src = "cereja.jpg";
+            cereja++;
+            frutas_rodadas += "cereja -";
+        } else {
+            fruta4.src = "laranja.jpg"
+            laranja++;
+            frutas_rodadas += "laranja -";
+        }
+
+        //   variavel para calcular o lucro da rodada
+        var lucro = 0;
+
+        // condição se a escolha for melancia
+        if (fruta == "melancia" && melancia == 1) {
+            lucro = 1.5;
+        } else if (fruta == "melancia" && melancia == 2) {
+            lucro = 5;
+        } else if (fruta == "melancia" && melancia == 3) {
+            lucro = 21;
+        } else if (fruta == "melancia" && melancia == 4) {
+            lucro = 50;
+        }
+
+        // condição se a escolha for banana
+        if (fruta == "banana" && banana == 1) {
+            lucro = 1.5;
+        } else if (fruta == "banana" && banana == 2) {
+            lucro = 5;
+        } else if (fruta == "banana" && banana == 3) {
+            lucro = 21;
+        } else if (fruta == "banana" && banana == 4) {
+            lucro = 50;
+        }
+
+        // condição se a escolha for cereja
+        if (fruta == "cereja" && cereja == 1) {
+            lucro = 1.5;
+        } else if (fruta == "cereja" && cereja == 2) {
+            lucro = 5;
+        } else if (fruta == "cereja" && cereja == 3) {
+            lucro = 21;
+        } else if (fruta == "cereja" && cereja == 4) {
+            lucro = 50;
+        }
+
+        // condição se a escolha for melancia
+        if (fruta == "laranja" && laranja == 1) {
+            lucro = 1.5;
+        } else if (fruta == "laranja" && laranja == 2) {
+            lucro = 5;
+        } else if (fruta == "laranja" && laranja == 3) {
+            lucro = 21;
+        } else if (fruta == "laranja" && laranja == 4) {
+            lucro = 50;
+        }
+
+        //    atualizar valores das variaves globais a cada nova rodada
+        qtd_rodadas++;
+
+        total_ganhos += lucro;
+
+        frutas_slc.push(fruta);
+
+        frutas_sorteadas.push(frutas_rodadas);
+
+        ganhos.push(lucro);
+
+        result.innerHTML = `Nessa rodada você ganhou ${lucro.toFixed(2)}`;
+    }
+
+    function encerrar() {
+        var valor_gasto = qtd_rodadas * 2;
+
+        // valor da diferença entre o valor ganho e o alor gasto
+        var diferenca = total_ganhos - valor_gasto;
+        var diferenca2 = valor_gasto - total_ganhos;
+
+
+
+        result2.innerHTML = `  <b><u>RESUMO DA NOITADA</u></b><br><br>
+        você participou de ${qtd_rodadas} rodadas
+        <br>
+        O valor ue você gastou foi de R$ ${valor_gasto.toFixed(2)}
+        <br>
+        O valor ue você ganhou foi de R$ ${total_ganhos.toFixed(2)}
+        <br><br>`
+
+
+        if (valor_gasto < total_ganhos) {
+            result2.innerHTML += `<b>Vá ao caixa e RECEBA R$ ${diferenca.toFixed(2)}</b>`;
+        } else if (valor_gasto > total_ganhos) {
+            result2.innerHTML += `<b>Vá ao caixa e PAGUE R$ ${diferenca2.toFixed(2)}</b>`;
+        } else {
+            result2.innerHTML += `<b>Incrível... Você nem ganhou e nem perdeu!!!!</b>`;
+        }
+
+        result2.innerHTML += `<br><br><b><u> DETALHE DA NOITADA</u></b><br><br>`;
+
+        for (var i = 0; i < frutas_slc.length; i++) {
+
+            result2.innerHTML += `Rodada - ${i + 1}-- A fruta escolhida foi ${frutas_slc[i]} e as frutas sorteadas foram:
+        ${frutas_sorteadas[i]} e você ganhou nessa rodada ${ganhos[i].toFixed(2)}<br>`;
+        }
+    }
+</script>
